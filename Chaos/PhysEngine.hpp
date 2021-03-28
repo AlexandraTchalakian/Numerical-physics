@@ -1,5 +1,3 @@
-// Autheur J. Dominski
-// 16 Oct. 2012
 #ifndef TEST_PHYSENGINE_H_INCLUDED
 #define TEST_PHYSENGINE_H_INCLUDED
 
