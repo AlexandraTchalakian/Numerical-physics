@@ -1,20 +1,8 @@
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Scan on parameters from Matlab
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Ce script Matlab decrit une facon d'automatiser la production 
-% de resultats, lorsqu'on doit faire une serie de simulations 
-% en variant un des parametres d'entree.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Initialize
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define some variables
-
-% MODIFY this according to your file system setup
 workingfolder = './'; % Path to the folder that contains the binary 
 % of the code and the simulations (must end with /). Here we execute the
 % script in the same folder.
@@ -23,7 +11,6 @@ ndigit = 8; % Precision used in numerical to string conversion for input data fi
 solver='StormerVerlet';
 
 % Define parameters: scanned and constant ones
-% MODIFY this according to your needs.
 % NB: scanned parameter must always be the first in these lines.
 
  %here, scan on dt, other parameters are kept constant.
@@ -61,7 +48,6 @@ nparams = length(inputparam_string);
 %Simulations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%NB: DO NOT MODIFY THIS (unless you really want to...)
 
 %Loop on the scanned parameter
 %For each value, create an input file,
@@ -115,8 +101,6 @@ end
 %Simulation analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%MODIFY this according to your needs.
-
 %for each file, load the data and, as an example, plot all the simulations
 %on the same plot
 dtnum=[];
@@ -133,7 +117,7 @@ for ii = 1 : nsimul
     Emec=data(:,4);
     Pnc=data(:,5);
     Enc = data(:,7);
-    %DWnc perdu pour chaque dt : pour obtnir l'intégralité des Wnc perdu il faut faire :
+    %DWnc perdu pour chaque dt : pour obtnir l'intÃ©gralitÃ© des Wnc perdu il faut faire :
     %sommedt Wnc(dt)
     Enctot = [];
     Enctot(1) = Enc(1);
@@ -143,7 +127,7 @@ for ii = 1 : nsimul
     %end
     
     %boucle permettant de stocker dans un vecteur les valeurs de points
-    %séparés d'un periode
+    %sÃ©parÃ©s d'un periode
     
     
     
@@ -158,7 +142,7 @@ for ii = 1 : nsimul
        Tnumsum = dtnum(end)-dtnum(1);
     
    
-        P = (Tnumsum)/(length(dtnum)-1) %période moyenne calculée pour une simulation
+        P = (Tnumsum)/(length(dtnum)-1) %pÃ©riode moyenne calculÃ©e pour une simulation
     
        Tnum(ii) = P;     
          
@@ -232,7 +216,7 @@ for ii = 1 : nsimul
     
 end
 
-%transformation de la période en radian pour tous les éléments
+%transformation de la pÃ©riode en radian pour tous les Ã©lÃ©ments
 
 %for i=1 : length(Tnum)
     %Tnum(i) = (2*pi)/(Tnum(i));
