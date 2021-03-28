@@ -1,0 +1,11 @@
+all: Application
+
+ConfigFile.o : ConfigFile.cpp ConfigFile.hpp
+	g++ -o ConfigFile.o -c ConfigFile.cpp -W -Wall -ansi -pedantic -std=c++11
+PhysEngine.o: PhysEngine.cpp PhysEngine.hpp ConfigFile.hpp
+	g++ -o PhysEngine.o -c PhysEngine.cpp -W -Wall -ansi -pedantic -std=c++11
+Main.o: Main.cpp PhysEngine.hpp ConfigFile.hpp
+	g++ -o Main.o -c Main.cpp -W -Wall -ansi -pedantic -std=c++11
+
+Application: PhysEngine.o Main.o ConfigFile.o
+	g++ -o Application PhysEngine.o Main.o ConfigFile.o
