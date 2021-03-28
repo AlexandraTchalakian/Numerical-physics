@@ -125,7 +125,6 @@ double Pbis;
 } 
 
 void PhysEngineEulerStormerVerlet::step(){
-  //TODO: ecrire le shema Stormer Verlet
     double Qprev(Q);
     double Pbis;
     Q+=P*dt+0.5*acceleration(Q,P,t)*pow(dt,2);
