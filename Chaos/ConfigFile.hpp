@@ -1,6 +1,3 @@
-// Auteur K. Steiner  - 09-2012 - version initiale
-// Auteur J. Dominski - 10-2012 - test file validity and exceptions
-// Auteur J. Dominski - 10-2012 - add process(line), toString(), printOut()
 #ifndef TEST_CONFIGFILE_H_INCLUDED
 #define TEST_CONFIGFILE_H_INCLUDED
 
