@@ -1,5 +1,3 @@
-// Autheur J. Dominski
-// 16 Oct. 2012
 #include <iostream>
 #include <cmath> 
 #include <fstream>
@@ -40,7 +38,7 @@ PhysEngine::PhysEngine(const ConfigFile configFile){
       tFin=2*pi*tFin/omega;
     }    
     
-    energyMec=0.5*Ig*pow(P,2)-mu*B0*cos(Q);//manque l'énerge potentielle
+    energyMec=0.5*Ig*pow(P,2)-mu*B0*cos(Q);//manque l'Ã©nerge potentielle
     powerNC=mu*B1*sin(omega*t)*sin(Q)*P+nu*pow(P,2); 
     
     std::string path=configFile.get<std::string>("outputPath");    
