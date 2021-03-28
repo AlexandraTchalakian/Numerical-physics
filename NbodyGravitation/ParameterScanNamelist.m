@@ -1,25 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Scan on parameters from Matlab
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Ce script Matlab decrit une facon d'automatiser la production 
-% de resultats, lorsqu'on doit faire une serie de simulations 
-% en variant un des parametres d'entree.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Initialize
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define some variables
-
-% MODIFY this according to your file system setup
 workingfolder = './'; % Path to the folder that contains the binary 
 % of the code and the simulations (must end with /). Here we execute the
 % script in the same folder.
 binfilename = 'Gravitation'; % Name of the binary executable
 ndigit = 18; % Precision used in numerical to string conversion for input data file name
-% Define parameters: scanned and constant ones
-% MODIFY this according to your needs.
+% Define parameters: scanned and constant ones.
 % NB: scanned parameter must always be the first in these lines.
 
  %here, scan on dt, other parameters are kept constant.
@@ -82,7 +71,6 @@ nparams = length(inputparam_string);
 %Simulations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%NB: DO NOT MODIFY THIS (unless you really want to...)
 
 %Loop on the scanned parameter
 %For each value, create an input file,
@@ -122,7 +110,7 @@ for ii = 1 : nsimul
     fnameinput_list{ ii }
     fnameoutput_list{ ii }
     %run the simulation
-    %eval( [ '!cp ', fnameinput_list{ ii}, ' configuration.in' ] );%eval -> écrit tout ça dans a commande matlab : !fait écrire dans la commande linux
+    %eval( [ '!cp ', fnameinput_list{ ii}, ' configuration.in' ] );%eval -> Ã©crit tout Ã§a dans a commande matlab : !fait Ã©crire dans la commande linux
     %eval( [ '!', workingfolder, binfilename ] );
     % On Linux platforms, uncomment the previous 2 lines and comment the following 2 lines
     % On Windows platforms, comment the previous 2 lines and uncomment the following 2 lines. Execute the present script in the workingfolder directory.
@@ -136,7 +124,6 @@ end
 %Simulation analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%MODIFY this according to your needs.
 
 %for each file, load the data and, as an example, plot all the simulations
 %on the same plot
